@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+    <div class="home-content">
+
+    <div class="row home-content__main">
+        <h3 style="color: #39b54a;">Text in your image,</h3>
+        <p style="text-align: justify;margin-left: 6px;font-size: 20px;">
+            {{text}}
+        </p>
+
+    </div>
+    </div>
+    
+    </section> 
+
+{% endblock %}

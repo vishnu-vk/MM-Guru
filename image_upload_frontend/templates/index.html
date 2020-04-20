@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
+    <div class="overlay"></div>
+    <div class="shadow-overlay"></div>
+    <div class="home-content">
+
+    <div class="row home-content__main">
+      <h1>Welcome to MM-Guru</h1>
+      <h3>
+      MM-Guru is a open source project to convert Malayalam handwritten documents into digital format. See this <a href="https://www.google.com" target="blank">GitHub</a> repository if you want to work with it. Upload a scanned image of a Malayalam handwritten document here to get the digital copy.
+      </h3>
+
+      <div class="home-content__buttons">
+        <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="inputfile">{{ form.image }}</div>
+        <label for="file" id="inputfile-label" class="btn btn--stroke">Choose a file..</label>
+        <button type="submit" class="btn btn--stroke" id="inputfile-upload"><i class="fa fa-upload" aria-hidden="true"></i> Upload </button>  
+        </form>
+      </div>
+    </div>
+    </div>
+    
+    </section> 
+
+
+{% endblock %}
