@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from backend_app.models import UploadImage
 from .forms import UploadImageForm
 from Scanner.Segmentor import Segment 
-import matplotlib.pyplot as plt
+
 import cv2 as cv
-import os
+
 def index(request): 
 
     if request.method == 'POST': 

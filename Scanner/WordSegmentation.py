@@ -1,6 +1,6 @@
 import cv2 as cv
 import numpy as np
-import matplotlib.pyplot as plt 
+
 
 
 
@@ -17,7 +17,7 @@ def Segment(image):
     # plt.imshow(img_dilation,cmap="gray")
     # plt.show()
     #find contours
-    im,ctrs, hier = cv.findContours(img_dilation.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
+    ctrs, hier = cv.findContours(img_dilation.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
     #sort contours
     sorted_ctrs = sorted(ctrs, key=lambda ctr: cv.boundingRect(ctr)[0])

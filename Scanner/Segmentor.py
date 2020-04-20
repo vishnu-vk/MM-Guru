@@ -1,5 +1,4 @@
 import argparse
-import matplotlib.pyplot as plt
 import cv2 as cv
 
 from .LineSegmentation import Segment as LS

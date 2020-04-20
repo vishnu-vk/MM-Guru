@@ -1,6 +1,6 @@
 import cv2 as cv
 import numpy as np
-import matplotlib.pyplot as plt 
+
 
 def Segment(image):
     # grayscale
@@ -9,7 +9,7 @@ def Segment(image):
     # binary
     ret,thresh = cv.threshold(gray,127,255,cv.THRESH_BINARY_INV)
     # find contours and their hierarchies
-    im,contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
 
 
     chrs_and_pos=[]
