@@ -15,9 +15,10 @@ def Segment(image):
     img_dilation = cv.dilate(thresh, kernel, iterations=1)
 
     hp=img_dilation
-    hp[img_dilation == 0]   = 0
-    hp[img_dilation == 255] = 1
+    hp[img_dilation <= 50]   = 0
+    hp[img_dilation >= 200] = 1
     horizontal_projection = np.sum(hp, axis = 1)
+
 
     sP=None
     eP=None
@@ -36,7 +37,8 @@ def Segment(image):
 
     op=[]
     for line in lines:
-        if(image.shape[1]*(line[1]-line[0])>100000):
+        print( image.shape[1]*(line[1]-line[0]) )
+        if(image.shape[1]*(line[1]-line[0])>10000):
             crop_img = image[line[0]:line[1], 0:image.shape[1]]
             op.append(crop_img)
     return op
